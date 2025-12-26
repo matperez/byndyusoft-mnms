@@ -5,9 +5,9 @@
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-relaxed);
     color: var(--color-text-inverse);
-    background-color: var(--color-primary);
+    background-color: #2B83BA;
     border: none;
-    border-radius: var(--radius-md);
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color var(--transition-base);
     margin-top: auto;
@@ -15,11 +15,11 @@
 }
 
 .button:hover:not(:disabled) {
-    background-color: var(--color-primary-hover);
+    background-color: #2373a5;
 }
 
 .button:active:not(:disabled) {
-    background-color: var(--color-primary-active);
+    background-color: #1e638f;
 }
 
 .button:disabled {

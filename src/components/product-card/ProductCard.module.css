@@ -2,7 +2,9 @@
     width: 100%;
     min-width: 250px;
     max-width: 400px;
+    min-height: 480px;
     height: 100vh;
+    max-height: 80vh;
     background-color: var(--color-background);
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
@@ -13,11 +15,19 @@
     overflow-y: auto;
 }
 
+@media (min-width: 401px) {
+    .card {
+        height: auto;
+        max-height: 80vh;
+    }
+}
+
 @media (max-width: 768px) {
     .card {
         max-width: 100%;
         min-width: 250px;
         height: 100vh;
+        max-height: 100vh;
     }
 }
 
