@@ -1,7 +1,7 @@
 .card {
     width: 100%;
     max-width: 400px;
-    min-height: 480px;
+    height: 100vh;
     background-color: var(--color-background);
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
@@ -9,12 +9,13 @@
     flex-direction: column;
     box-shadow: 0 2px 8px var(--color-shadow);
     font-family: var(--font-family);
+    overflow-y: auto;
 }
 
 @media (max-width: 768px) {
     .card {
         max-width: 100%;
-        min-height: auto;
+        height: 100vh;
     }
 }
 
@@ -158,6 +159,7 @@
     cursor: pointer;
     transition: background-color var(--transition-base);
     margin-top: auto;
+    margin-bottom: var(--spacing-lg);
 }
 
 .saveButton:hover {
