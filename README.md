@@ -20,6 +20,39 @@ npm run storybook
 npm run build
 ```
 
+## Тестирование
+
+Проект использует [Vitest](https://vitest.dev/) для запуска тестов.
+
+```bash
+# Запуск всех тестов
+npm test
+
+# Запуск тестов в watch-режиме (автоматический перезапуск при изменении файлов)
+npm test
+
+# Запуск тестов один раз (для CI/CD)
+npm test -- --run
+
+# Запуск тестов с UI интерфейсом
+npm run test:ui
+
+# Запуск тестов с отчетом о покрытии кода
+npm run test:coverage
+```
+
+### Структура тестов
+
+Тесты находятся рядом с компонентами и имеют расширение `.test.tsx` или `.test.ts`:
+
+- `src/components/quantity-input/QuantityInput.test.tsx` - тесты для компонента QuantityInput
+- `src/components/date-picker/DatePicker.test.tsx` - тесты для компонента DatePicker
+- `src/test/setup.ts` - настройки тестового окружения
+
+### Запуск тестов в CI/CD
+
+Тесты автоматически запускаются в GitHub Actions при каждом push в ветки `main`, `master` или `develop`. Если тесты падают, деплой не выполняется.
+
 ## Деплой на GitHub Pages
 
 Проект автоматически деплоится на GitHub Pages при пуше в ветки `main`, `master` или `develop`.
