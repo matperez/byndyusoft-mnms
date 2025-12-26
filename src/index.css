@@ -2,6 +2,7 @@
 @import '@byndyusoft-ui/reset-css/button';
 @import '@byndyusoft-ui/reset-css/text';
 @import '@byndyusoft-ui/reset-css/input';
+@import './design-tokens.css';
 
 html {
     font-family: 'IBM Plex Sans', sans-serif;
