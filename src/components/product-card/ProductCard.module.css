@@ -1,25 +1,26 @@
 .card {
     width: 320px;
     height: 480px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 16px;
+    background-color: var(--color-background);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
     display: flex;
     flex-direction: column;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px var(--color-shadow);
+    font-family: var(--font-family);
 }
 
 .content {
     display: flex;
-    gap: 16px;
-    margin-bottom: 16px;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
 }
 
 .imageContainer {
     width: 120px;
     height: 120px;
     flex-shrink: 0;
-    background-color: #ffffff;
+    background-color: var(--color-background);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,7 +37,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: var(--spacing-xs);
 }
 
 .sku {
@@ -65,85 +66,89 @@
 .separator {
     width: 100%;
     height: 1px;
-    background-color: #e0e0e0;
-    margin: 16px 0;
+    background-color: var(--color-border);
+    margin: var(--spacing-lg) 0;
 }
 
 .quantitySection {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-bottom: 16px;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.expirationDateSection {
+    margin-bottom: var(--spacing-lg);
 }
 
 .quantityLabel {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.4;
-    color: #1a1a1a;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
 }
 
 .quantityInputWrapper {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--spacing-sm);
 }
 
 .quantityInput {
     flex: 1;
-    padding: 8px 12px;
-    font-size: 14px;
-    line-height: 1.4;
-    color: #1a1a1a;
-    background-color: #ffffff;
-    border: 1px solid #4a90e2;
-    border-radius: 4px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border-hover);
+    border-radius: var(--radius-sm);
     outline: none;
-    transition: border-color 0.2s ease;
+    transition: border-color var(--transition-base);
 }
 
 .quantityInput:focus {
-    border-color: #007bff;
-    outline: 2px solid rgba(0, 123, 255, 0.25);
+    border-color: var(--color-border-focus);
+    outline: 2px solid var(--color-focus-ring);
     outline-offset: 2px;
 }
 
 .quantityInput::placeholder {
-    color: #999999;
+    color: var(--color-text-tertiary);
 }
 
 .quantityUnit {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.4;
-    color: #1a1a1a;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
 }
 
 .saveButton {
     width: 100%;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.5;
-    color: #ffffff;
-    background-color: #007bff;
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-inverse);
+    background-color: var(--color-primary);
     border: none;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color var(--transition-base);
     margin-top: auto;
 }
 
 .saveButton:hover {
-    background-color: #0056b3;
+    background-color: var(--color-primary-hover);
 }
 
 .saveButton:active {
-    background-color: #004085;
+    background-color: var(--color-primary-active);
 }
 
 .saveButton:focus {
-    outline: 2px solid #007bff;
+    outline: 2px solid var(--color-border-focus);
     outline-offset: 2px;
 }
 
