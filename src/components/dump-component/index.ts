@@ -1,0 +1,2 @@
+export { DumpComponent } from './DumpComponent';
+
