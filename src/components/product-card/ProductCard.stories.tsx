@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ProductCard } from './ProductCard';
+import productImage from '../../assets/image 1.png';
 
 const meta = {
     title: 'ProductCard',
@@ -15,12 +16,13 @@ type TStory = StoryObj<typeof ProductCard>;
 
 export const Basic: TStory = {
     args: {
-        image: 'https://via.placeholder.com/120x120?text=Товар',
+        image: productImage,
         sku: 'ШК 327600060 0152',
         id: '34233465',
         name: 'УШМ Makita GA9020, 2200 Вт, 230 мм',
-        onSave: (quantity) => {
+        onSave: (quantity, expirationDate) => {
             console.log('Сохранено количество:', quantity);
+            console.log('Срок годности:', expirationDate);
         }
     }
 };
@@ -32,8 +34,9 @@ export const WithoutImage: TStory = {
         sku: 'ШК 123456789 0123',
         id: '12345678',
         name: 'Название товара без изображения',
-        onSave: (quantity) => {
+        onSave: (quantity, expirationDate) => {
             console.log('Сохранено количество:', quantity);
+            console.log('Срок годности:', expirationDate);
         }
     }
 };

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { DatePicker } from '../date-picker';
 import styles from './ProductCard.module.css';
 
 export interface ProductCardProps {
@@ -6,7 +7,7 @@ export interface ProductCardProps {
     sku: string;
     id: string;
     name: string;
-    onSave?: (quantity: number) => void;
+    onSave?: (quantity: number, expirationDate: Date | null) => void;
 }
 
 export function ProductCard({
@@ -17,11 +18,12 @@ export function ProductCard({
     onSave
 }: ProductCardProps) {
     const [quantity, setQuantity] = useState<string>('');
+    const [expirationDate, setExpirationDate] = useState<Date | null>(null);
 
     const handleSave = () => {
         const numQuantity = parseInt(quantity, 10);
         if (!isNaN(numQuantity) && numQuantity > 0 && onSave) {
-            onSave(numQuantity);
+            onSave(numQuantity, expirationDate);
         }
     };
 
@@ -59,6 +61,13 @@ export function ProductCard({
                     />
                     <span className={styles.quantityUnit}>шт.</span>
                 </div>
+            </div>
+            <div className={styles.expirationDateSection}>
+                <DatePicker
+                    value={expirationDate}
+                    onChange={setExpirationDate}
+                    minDate={new Date()}
+                />
             </div>
             <button
                 className={styles.saveButton}
