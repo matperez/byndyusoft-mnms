@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import image from '../../assets/pic-1.png';
 import { DatePicker } from '../date-picker';
 import styles from './ProductCard.module.css';
 
@@ -11,7 +12,6 @@ export interface ProductCardProps {
 }
 
 export function ProductCard({
-    image,
     sku,
     id,
     name,
