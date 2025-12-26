@@ -1,5 +1,6 @@
 .calendar {
-    width: 320px;
+    width: 100%;
+    max-width: 400px;
     background-color: var(--color-background);
     border-radius: var(--radius-lg);
     box-shadow: 0 4px 16px var(--color-shadow-hover);
@@ -8,6 +9,15 @@
     flex-direction: column;
     gap: var(--spacing-lg);
     font-family: var(--font-family);
+}
+
+@media (max-width: 768px) {
+    .calendar {
+        max-width: 100%;
+        border-radius: var(--radius-lg);
+        max-height: 90vh;
+        overflow-y: auto;
+    }
 }
 
 .header {

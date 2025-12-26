@@ -105,15 +105,18 @@ export function DatePicker({
                 </button>
             </div>
             {isOpen && (
-                <div className={styles.calendarWrapper}>
-                    <Calendar
-                        value={value}
-                        onChange={handleCalendarChange}
-                        minDate={minDate}
-                        maxDate={maxDate}
-                        onClose={handleCalendarClose}
-                    />
-                </div>
+                <>
+                    <div className={styles.overlay} onClick={handleCalendarClose} />
+                    <div className={styles.modal}>
+                        <Calendar
+                            value={value}
+                            onChange={handleCalendarChange}
+                            minDate={minDate}
+                            maxDate={maxDate}
+                            onClose={handleCalendarClose}
+                        />
+                    </div>
+                </>
             )}
         </div>
     );
