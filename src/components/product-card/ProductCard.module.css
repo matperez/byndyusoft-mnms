@@ -94,10 +94,6 @@
     margin-bottom: var(--spacing-lg);
 }
 
-.expirationDateSection {
-    margin-bottom: var(--spacing-lg);
-}
-
 .quantityLabel {
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-regular);
@@ -112,7 +108,7 @@
 }
 
 .quantityInput {
-    flex: 1;
+    width: 66.67%;
     padding: var(--spacing-sm) var(--spacing-md);
     font-size: var(--font-size-sm);
     line-height: var(--line-height-normal);
@@ -122,6 +118,14 @@
     border-radius: var(--radius-sm);
     outline: none;
     transition: border-color var(--transition-base);
+}
+
+.expirationDateSection {
+    margin-bottom: var(--spacing-lg);
+}
+
+.expirationDateSection > :first-child > :last-child {
+    width: 66.67%;
 }
 
 .quantityInput:focus {
