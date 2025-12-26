@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import image from '../../assets/pic-1.png';
 import styles from './ProductCard.module.css';
 
 export interface ProductCardProps {
@@ -10,7 +11,6 @@ export interface ProductCardProps {
 }
 
 export function ProductCard({
-    image,
     sku,
     id,
     name,
