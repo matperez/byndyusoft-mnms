@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import image from '../../assets/pic-1.png';
 import { DatePicker } from '../date-picker';
+import { QuantityInput } from '../quantity-input';
+import { SaveButton } from '../save-button';
 import styles from './ProductCard.module.css';
 
 export interface ProductCardProps {
@@ -17,20 +19,12 @@ export function ProductCard({
     name,
     onSave
 }: ProductCardProps) {
-    const [quantity, setQuantity] = useState<string>('');
+    const [quantity, setQuantity] = useState<number | null>(null);
     const [expirationDate, setExpirationDate] = useState<Date | null>(null);
 
     const handleSave = () => {
-        const numQuantity = parseInt(quantity, 10);
-        if (!isNaN(numQuantity) && numQuantity > 0 && onSave) {
-            onSave(numQuantity, expirationDate);
-        }
-    };
-
-    const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value;
-        if (value === '' || /^\d+$/.test(value)) {
-            setQuantity(value);
+        if (quantity !== null && quantity > 0 && onSave) {
+            onSave(quantity, expirationDate);
         }
     };
 
@@ -49,19 +43,10 @@ export function ProductCard({
                 </div>
             </div>
             <div className={styles.separator} />
-            <div className={styles.quantitySection}>
-                <label className={styles.quantityLabel}>Количество</label>
-                <div className={styles.quantityInputWrapper}>
-                    <input
-                        type="text"
-                        className={styles.quantityInput}
-                        value={quantity}
-                        onChange={handleQuantityChange}
-                        placeholder="0"
-                    />
-                    <span className={styles.quantityUnit}>шт.</span>
-                </div>
-            </div>
+            <QuantityInput
+                value={quantity}
+                onChange={setQuantity}
+            />
             <div className={styles.expirationDateSection}>
                 <DatePicker
                     value={expirationDate}
@@ -69,13 +54,7 @@ export function ProductCard({
                     minDate={new Date()}
                 />
             </div>
-            <button
-                className={styles.saveButton}
-                onClick={handleSave}
-                type="button"
-            >
-                Сохранить
-            </button>
+            <SaveButton onClick={handleSave} />
         </div>
     );
 }

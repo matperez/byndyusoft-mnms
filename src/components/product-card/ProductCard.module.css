@@ -1,5 +1,6 @@
 .card {
     width: 100%;
+    min-width: 250px;
     max-width: 400px;
     height: 100vh;
     background-color: var(--color-background);
@@ -15,6 +16,7 @@
 @media (max-width: 768px) {
     .card {
         max-width: 100%;
+        min-width: 250px;
         height: 100vh;
     }
 }
@@ -88,39 +90,6 @@
     margin: var(--spacing-lg) 0;
 }
 
-.quantitySection {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
-}
-
-.quantityLabel {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-regular);
-    line-height: var(--line-height-normal);
-    color: var(--color-text-primary);
-}
-
-.quantityInputWrapper {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-}
-
-.quantityInput {
-    width: 66.67%;
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-size: var(--font-size-sm);
-    line-height: var(--line-height-normal);
-    color: var(--color-text-primary);
-    background-color: var(--color-background);
-    border: 1px solid var(--color-border-hover);
-    border-radius: var(--radius-sm);
-    outline: none;
-    transition: border-color var(--transition-base);
-}
-
 .expirationDateSection {
     margin-bottom: var(--spacing-lg);
 }
@@ -129,49 +98,10 @@
     width: 66.67%;
 }
 
-.quantityInput:focus {
-    border-color: var(--color-border-focus);
-    outline: 2px solid var(--color-focus-ring);
-    outline-offset: 2px;
-}
-
-.quantityInput::placeholder {
-    color: var(--color-text-tertiary);
-}
-
-.quantityUnit {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-regular);
-    line-height: var(--line-height-normal);
-    color: var(--color-text-primary);
-}
-
-.saveButton {
-    width: 100%;
-    padding: var(--spacing-md) var(--spacing-xl);
-    font-size: var(--font-size-md);
-    font-weight: var(--font-weight-medium);
-    line-height: var(--line-height-relaxed);
-    color: var(--color-text-inverse);
-    background-color: var(--color-primary);
-    border: none;
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    transition: background-color var(--transition-base);
-    margin-top: auto;
-    margin-bottom: var(--spacing-lg);
-}
-
-.saveButton:hover {
-    background-color: var(--color-primary-hover);
-}
-
-.saveButton:active {
-    background-color: var(--color-primary-active);
-}
-
-.saveButton:focus {
-    outline: 2px solid var(--color-border-focus);
-    outline-offset: 2px;
+@media (max-width: 320px) {
+    .expirationDateSection > :first-child > :last-child {
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
