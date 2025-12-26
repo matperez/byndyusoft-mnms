@@ -94,14 +94,16 @@
     margin-bottom: var(--spacing-lg);
 }
 
-.expirationDateSection > :first-child > :last-child {
-    width: 66.67%;
+.expirationDateSection :global(div[class*='inputWrapper']) {
+    width: 66.67% !important;
+    max-width: 66.67% !important;
+    flex-shrink: 0;
 }
 
 @media (max-width: 320px) {
-    .expirationDateSection > :first-child > :last-child {
-        width: 100%;
-        max-width: 100%;
+    .expirationDateSection :global(div[class*='inputWrapper']) {
+        width: 100% !important;
+        max-width: 100% !important;
     }
 }
 
