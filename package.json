@@ -13,6 +13,9 @@
         "test": "vitest",
         "test:ui": "vitest --ui",
         "test:coverage": "vitest run --coverage",
+        "test:ct": "playwright test -c playwright-ct.config.ts",
+        "test:ct:ui": "playwright test -c playwright-ct.config.ts --ui",
+        "test:ct:headed": "playwright test -c playwright-ct.config.ts --headed",
         "prettier:check": "prettier --check \"**/**\"",
         "prettier:fix": "prettier --check \"**/**\" --write",
         "storybook": "storybook dev -p 6006",
@@ -25,6 +28,8 @@
     },
     "devDependencies": {
         "@eslint/js": "^9.39.1",
+        "@playwright/experimental-ct-react": "^1.57.0",
+        "@playwright/test": "^1.57.0",
         "@storybook/addon-a11y": "^10.1.10",
         "@storybook/addon-docs": "^10.1.10",
         "@storybook/react-vite": "^10.1.10",

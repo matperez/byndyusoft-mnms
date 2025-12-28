@@ -28,10 +28,14 @@ npm run build
 
 ## Тестирование
 
-Проект использует [Vitest](https://vitest.dev/) для запуска тестов.
+Проект использует два подхода к тестированию:
+
+### Unit-тесты (Vitest)
+
+[Vitest](https://vitest.dev/) используется для быстрых unit-тестов, которые выполняются в Node.js окружении.
 
 ```bash
-# Запуск всех тестов
+# Запуск всех unit-тестов
 npm test
 
 # Запуск тестов в watch-режиме (автоматический перезапуск при изменении файлов)
@@ -47,13 +51,38 @@ npm run test:ui
 npm run test:coverage
 ```
 
+### Browser-тесты (Playwright)
+
+[Playwright](https://playwright.dev/) используется для тестирования компонентов в реальном браузере. Эти тесты позволяют видеть, как компоненты работают в браузере, и взаимодействовать с ними визуально.
+
+```bash
+# Запуск browser-тестов (headless режим)
+npm run test:ct
+
+# Запуск browser-тестов с UI интерфейсом (рекомендуется для разработки)
+npm run test:ct:ui
+
+# Запуск browser-тестов в видимом браузере (headed режим)
+npm run test:ct:headed
+```
+
+**Рекомендация:** Используйте `npm run test:ct:ui` для разработки - это откроет интерактивный интерфейс Playwright, где вы сможете:
+- Видеть все тесты в реальном времени
+- Наблюдать, как тесты выполняются в браузере
+- Делать скриншоты и просматривать их
+- Отлаживать падающие тесты
+- Видеть трассировку выполнения тестов
+
 ### Структура тестов
 
-Тесты находятся рядом с компонентами и имеют расширение `.test.tsx` или `.test.ts`:
-
-- `src/components/quantity-input/QuantityInput.test.tsx` - тесты для компонента QuantityInput
-- `src/components/date-picker/DatePicker.test.tsx` - тесты для компонента DatePicker
+**Unit-тесты** (Vitest) находятся рядом с компонентами и имеют расширение `.test.tsx` или `.test.ts`:
+- `src/components/quantity-input/QuantityInput.test.tsx` - unit-тесты для компонента QuantityInput
+- `src/components/date-picker/DatePicker.test.tsx` - unit-тесты для компонента DatePicker
 - `src/test/setup.ts` - настройки тестового окружения
+
+**Browser-тесты** (Playwright) находятся рядом с компонентами и имеют расширение `.spec.tsx`:
+- `src/components/quantity-input/QuantityInput.spec.tsx` - browser-тесты для компонента QuantityInput
+- `src/components/date-picker/DatePicker.spec.tsx` - browser-тесты для компонента DatePicker
 
 ### Запуск тестов в CI/CD
 
